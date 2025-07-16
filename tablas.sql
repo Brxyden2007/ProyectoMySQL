@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS resumen_calificaciones (
     company_id VARCHAR(20),
     mes_anio VARCHAR(7),
     promedio DECIMAL(3,2)
-);
+); --  Registrado para el punto 4 de Procedimientos Almacenados
 
 CREATE TABLE poll_questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -225,13 +225,13 @@ CREATE TABLE poll_questions (
     question TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (poll_id) REFERENCES polls(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
+); -- Registrado para el punto 12 de Procedimientos Almacenados
 
 CREATE TABLE IF NOT EXISTS errores_log (
     id INT AUTO_INCREMENT PRIMARY KEY,
     descripcion TEXT,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+); -- Registrado para el punto 8 de Procedimientos Almacenados
 
 CREATE TABLE IF NOT EXISTS historial_precios (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -240,5 +240,14 @@ CREATE TABLE IF NOT EXISTS historial_precios (
     precio_anterior DOUBLE,
     precio_nuevo DOUBLE,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+); -- Registrado para el punto 15 de Procedimientos Almacenados
+
+CREATE TABLE IF NOT EXISTS log_acciones (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  customer_id INT,
+  company_id VARCHAR(20),
+  poll_id INT,
+  accion VARCHAR(100),
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); -- Registrado para el 2do punto de Triggers
 
