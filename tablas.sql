@@ -226,3 +226,19 @@ CREATE TABLE poll_questions (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (poll_id) REFERENCES polls(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS errores_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion TEXT,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS historial_precios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    company_id VARCHAR(20),
+    product_id INT,
+    precio_anterior DOUBLE,
+    precio_nuevo DOUBLE,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
