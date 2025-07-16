@@ -218,3 +218,11 @@ CREATE TABLE IF NOT EXISTS resumen_calificaciones (
     mes_anio VARCHAR(7),
     promedio DECIMAL(3,2)
 );
+
+CREATE TABLE poll_questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    poll_id INT NOT NULL,
+    question TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (poll_id) REFERENCES polls(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
