@@ -304,7 +304,7 @@ INSERT INTO stateorregions (code, name, country_id, subdivision_id, code3166) VA
 ('CO', 'Colorado', '840', 3, 'US-CO'),
 ('CT', 'Connecticut', '840', 3, 'US-CT'),
 ('DE', 'Delaware', '840', 3, 'US-DE'),
-('US-DC', 'District of Columbia', '840', 5, 'US-DC'),
+('USDC', 'District of Columbia', '840', 5, 'US-DC'),
 ('FL', 'Florida', '840', 3, 'US-FL'),
 ('GA', 'Georgia', '840', 3, 'US-GA'),
 ('GU', 'Guam', '840', 4, 'US-GU'),
@@ -352,7 +352,6 @@ INSERT INTO stateorregions (code, name, country_id, subdivision_id, code3166) VA
 ('WV', 'West Virginia', '840', 3, 'US-WV'),
 ('WI', 'Wisconsin', '840', 3, 'US-WI'),
 ('WY', 'Wyoming', '840', 3, 'US-WY');
-
 
 -- citiesormunicipalities inserts
 
@@ -1620,7 +1619,6 @@ INSERT INTO customers (name, city_id, audience_id, cellphone, email) VALUES
 
 -- INSERT unitsofmeasure
 
-
 INSERT INTO unitofmeasure (id, description) VALUES
 (1, 'Litro'),
 (2, 'Unidad'),
@@ -1675,7 +1673,6 @@ INSERT INTO favorites (customer_id, company_id) VALUES
 (19, '900123001-1'), 
 (20, '900123001-1');
 
-
 -- INSERT products
 
 INSERT INTO products (name, detail, price, category_id, image) VALUES
@@ -1719,7 +1716,6 @@ INSERT INTO details_favorites (favorite_id, product_id) VALUES
 (19, 1),
 (20, 2);
 
-
 -- INSERT categories_polls
 
 INSERT INTO categories_polls (name) VALUES
@@ -1728,7 +1724,6 @@ INSERT INTO categories_polls (name) VALUES
 
 -- INSERT polls
 
-
 INSERT INTO polls (name, description, isactive, categorypoll_id) VALUES
 ('Calidad del Servicio', 'Evalúa la amabilidad, eficiencia y atención al cliente de la empresa.', TRUE, 1),
 ('Relación Precio-Calidad', 'Evalúa si los precios se ajustan a la calidad del servicio recibido.', TRUE, 1),
@@ -1736,7 +1731,6 @@ INSERT INTO polls (name, description, isactive, categorypoll_id) VALUES
 ('Disponibilidad y Stock', 'Evalúa la facilidad para adquirir el producto en inventario.', TRUE, 2);
 
 -- INSERT rates
-
 
 INSERT INTO rates (customer_id, company_id, poll_id, daterating, rating) VALUES
 (1, '900123001-1', 1, '2025-07-10 10:00:00', 4.5),
@@ -1771,7 +1765,6 @@ INSERT INTO quality_products (product_id, customer_id, poll_id, company_id, date
 (5, 11, 3, '900123005-5', '2025-07-02 16:00:00', 4.4);
 
  -- INSERT city_phone_codes
-
 
 INSERT INTO city_phone_codes (city_name, phone_code) VALUES
 ('ARMENIA', '57-6'),
@@ -1831,7 +1824,6 @@ INSERT INTO customers_addresses (customer_id, city_id, address) VALUES
 (29, '76001', 'Calle 19 #33-19'),
 (30, '05001', 'Cra 8 #21-18');
 
-
 -- INSERT memberships
 
 INSERT INTO memberships (id, name, description) VALUES
@@ -1890,6 +1882,8 @@ INSERT INTO membershipbenefits (membership_id, period_id, audience_id, benefit_i
 (3, 2, 3, 2),
 (3, 2, 3, 3),
 (3, 3, 3, 4);
+
+-- INSERT (another company for productos almacenados)
 
 INSERT INTO companies (id, type_id, name, category_id, city_id, audience_id, cellphone, email)
 VALUES ('EMP001', 1, 'Empresa Demo 001', 1, '11001', 1, '3110000001', 'demo@empresa.com');
